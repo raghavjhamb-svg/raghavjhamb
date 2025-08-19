@@ -1,0 +1,1507 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Raghav Jhamb - Video Producer Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Playfair+Display:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+        :root {
+            --primary-color: #6366f1;
+            --secondary-color: #f59e0b;
+            --accent-color: #ec4899;
+            --text-primary: #0f172a;
+            --text-secondary: #64748b;
+            --text-light: #94a3b8;
+            --background: #ffffff;
+            --background-secondary: #f8fafc;
+            --background-glass: rgba(255, 255, 255, 0.85);
+            --border-color: #e2e8f0;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --gradient-hero: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--background);
+            overflow-x: hidden;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Header */
+        header {
+            background: var(--background-glass);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        header.scrolled {
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: var(--shadow);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 50%;
+            background: var(--primary-color);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 100px;
+            text-align: center;
+            background: 
+                radial-gradient(ellipse at top, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
+                radial-gradient(ellipse at bottom, rgba(236, 72, 153, 0.1) 0%, transparent 50%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%236366f1' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+            opacity: 0.4;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 8vw, 4.5rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--primary-color) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            font-weight: 400;
+            animation: fadeInUp 1s ease 0.2s both;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--primary-color);
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            animation: fadeInUp 1s ease 0.4s both;
+            box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
+        }
+
+        .cta-button:hover {
+            background: #4f46e5;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(99, 102, 241, 0.4);
+        }
+
+        /* Sections */
+        .section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .section:nth-child(even) {
+            background: var(--background-secondary);
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            text-align: center;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 600;
+            margin-bottom: 4rem;
+            color: var(--text-primary);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: var(--gradient-primary);
+            bottom: -1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .category-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin: 4rem 0 2rem 0;
+            color: var(--text-primary);
+            font-weight: 600;
+            position: relative;
+            display: inline-block;
+        }
+
+        .category-title::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            background: var(--gradient-primary);
+            bottom: -0.5rem;
+            left: 0;
+            border-radius: 2px;
+        }
+
+        /* Video Grid */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .video-card {
+            background: var(--background);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            border: 1px solid var(--border-color);
+            position: relative;
+        }
+
+        .video-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .video-thumbnail {
+            width: 100%;
+            height: 220px;
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .video-thumbnail.vertical {
+            height: 320px;
+        }
+
+        .video-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .video-card:hover .video-thumbnail img {
+            transform: scale(1.05);
+        }
+
+        .thumbnail-placeholder {
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .thumbnail-placeholder.fashion-placeholder {
+            background: var(--gradient-secondary);
+        }
+
+        .placeholder-content {
+            text-align: center;
+            color: white;
+            opacity: 0.95;
+        }
+
+        .placeholder-icon {
+            font-size: 3rem;
+            margin-bottom: 0.75rem;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+        }
+
+        .placeholder-text {
+            font-size: 1rem;
+            font-weight: 600;
+            line-height: 1.3;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .play-button {
+            width: 70px;
+            height: 70px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: var(--primary-color);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: absolute;
+            z-index: 2;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .video-card:hover .play-button {
+            background: white;
+            transform: scale(1.15);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        .video-info {
+            padding: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .brand-name {
+            font-weight: 700;
+            color: var(--primary-color);
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.5rem;
+        }
+
+        .video-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+            line-height: 1.4;
+        }
+
+        .video-description {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1.25rem;
+        }
+
+        .video-category {
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.8rem;
+            display: inline-block;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .video-category.tvc {
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+        }
+
+        .video-category.corporate {
+            background: linear-gradient(135deg, #10b981, #059669);
+        }
+
+        .video-category.reels {
+            background: linear-gradient(135deg, #f97316, #ea580c);
+        }
+
+        .video-category.documentary {
+            background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+        }
+
+        .video-category.fashion {
+            background: linear-gradient(135deg, #ec4899, #db2777);
+        }
+
+        .video-category.series {
+            background: linear-gradient(135deg, #64748b, #475569);
+        }
+
+        .video-category.event {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 450px;
+            background: var(--gradient-primary);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.25rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='20' cy='20' r='2'/%3E%3C/g%3E%3C/svg%3E") repeat;
+        }
+
+        /* Services */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .service-card {
+            background: var(--background);
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .service-icon {
+            width: 90px;
+            height: 90px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2.25rem;
+            color: white;
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.3);
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--background);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: var(--background);
+            color: var(--text-primary);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+        }
+
+        .submit-button {
+            background: var(--primary-color);
+            color: white;
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
+        }
+
+        .submit-button:hover {
+            background: #4f46e5;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(99, 102, 241, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-primary);
+            color: white;
+            text-align: center;
+            padding: 4rem 0;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .social-link {
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .social-link:hover {
+            background: var(--primary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
+        }
+
+        .social-link svg {
+            width: 24px;
+            height: 24px;
+            fill: white;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding: 100px 0 80px;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .video-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .category-title {
+                font-size: 1.5rem;
+            }
+
+            .contact-form {
+                padding: 2rem;
+            }
+        }
+    
+        /* Responsive About image */
+        .about-image {
+            height: auto;
+            aspect-ratio: 4 / 3;
+        }
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            border-radius: 20px;
+        }
+        @media (max-width: 768px) {
+            .about-image {
+                aspect-ratio: 1 / 1;
+            }
+        }
+    
+        /* Mobile menu toggle */
+        .menu-toggle {
+            display: none;
+            background: transparent;
+            border: 0;
+            font-size: 1.75rem;
+            line-height: 1;
+            cursor: pointer;
+            padding: 0.25rem 0.5rem;
+            border-radius: 8px;
+            color: var(--text-primary);
+        }
+        .menu-toggle:focus-visible {
+            outline: 2px solid var(--primary-color);
+            outline-offset: 2px;
+        }
+        header nav.open .nav-links {
+            display: flex;
+        }
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            header nav {
+                position: relative;
+            }
+            .nav-links {
+                position: absolute;
+                top: 64px;
+                right: 1rem;
+                display: none;
+                flex-direction: column;
+                gap: 1rem;
+                background: var(--background);
+                border: 1px solid var(--border-color);
+                border-radius: 14px;
+                padding: 1rem 1.25rem;
+                box-shadow: var(--shadow-lg);
+                z-index: 1100;
+                min-width: 220px;
+            }
+            .nav-links a {
+                color: var(--text-primary);
+                font-weight: 600;
+            }
+            .nav-links a::after { display: none; }
+        }
+        /* Reduce motion preference */
+        @media (prefers-reduced-motion: reduce) {
+            * { animation: none !important; transition: none !important; }
+        }
+    
+        /* ===== Portfolio Filters ===== */
+        .filters{
+            display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center;margin:-1rem 0 2rem
+        }
+        .filters button{
+            border:1px solid var(--border-color);
+            background: var(--background);
+            border-radius:999px;padding:.5rem .9rem;cursor:pointer;
+            font-weight:600
+        }
+        .filters button.active{
+            background:var(--primary-color);color:#fff;border-color:transparent
+        }
+        .video-card[hidden]{display:none!important}
+
+        /* ===== Lightbox Modal ===== */
+        .modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;z-index:2000}
+        .modal.open{display:flex}
+        .modal-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.6);backdrop-filter:blur(2px)}
+        .modal-dialog{position:relative;width:min(900px,92vw);aspect-ratio:16/9;background:#000;border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+        .modal-close{position:absolute;top:.5rem;right:.75rem;background:#fff;border:0;border-radius:10px;padding:.35rem .55rem;cursor:pointer}
+        #videoFrame{width:100%;height:100%;border:0;display:block}
+
+        /* ===== Dark Mode (auto) ===== */
+        @media (prefers-color-scheme: dark){
+          :root{
+            --background:#0b0f1a; --background-secondary:#0e1422;
+            --text-primary:#e6eaf3; --text-secondary:#aab3c5; --border-color:#1e2640;
+          }
+          body{background:var(--background);color:var(--text-primary)}
+          header { background: rgba(14,20,34,.8); }
+          .video-card{border-color:var(--border-color); background:#101828}
+          .contact-form, .service-card{background:#101828;border-color:var(--border-color)}
+          .nav-links{background:var(--background)}
+        }
+    </style>
+</head>
+<body>
+<!-- Header -->
+<header id="header">
+<nav class="container">
+<a class="logo" href="#">Raghav Jhamb</a><button aria-expanded="false" aria-label="Open menu" class="menu-toggle" type="button">☰</button>
+<ul class="nav-links">
+<li><a href="#home">Home</a></li>
+<li><a href="#portfolio">Portfolio</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+</header>
+<!-- Hero Section -->
+<section class="hero" id="home">
+<div class="container">
+<div class="hero-content">
+<h1>Raghav Jhamb</h1>
+<p class="hero-subtitle">Turning Ideas into Cinematic Stories • Your Vision, My Lens</p>
+<a class="cta-button" href="#portfolio">
+<span>View My Work</span>
+<span>→</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Portfolio Section -->
+<section class="section" id="portfolio">
+<div class="container">
+<h2 class="section-title">My Video Portfolio</h2><div class="filters"><button class="active" data-filter="all">All</button><button data-filter="tvc">TVC</button><button data-filter="corporate">Corporate</button><button data-filter="reels">Reels</button><button data-filter="fashion">Fashion</button><button data-filter="series">Series</button><button data-filter="event">Events</button></div>
+<!-- TVCs Section -->
+<h3 class="category-title">📺 Television Commercials</h3>
+<div class="video-grid">
+<div class="video-card" onclick="openVideo('https://youtu.be/OAkMFepwOlY')">
+<div class="video-thumbnail">
+<img alt="Prega News Women's Day 2024" decoding="async" loading="lazy" sizes="(max-width: 768px) 100vw, 350px" src="https://raw.githubusercontent.com/raghavjhamb-svg/raghavjhamb/main/images/thumbnails/tvc/Prega%20News%20Womens%20Day%202024%20Thumbnail.jpeg"/>
+<div class="play-button">▶</div>
+</div>
+<div class="video-info">
+<div class="brand-name">PREGA NEWS</div>
+<h3 class="video-title">Women's Day 2024</h3>
+<p class="video-description">Celebrating women's strength and empowerment through compelling storytelling.</p>
+<span class="video-category tvc">TVC</span>
+</div>
+</div>
+<div class="video-card" onclick="openVideo('https://youtu.be/hfoB1pqkUWc')">
+<div class="video-thumbnail">
+<img alt="Newgen Patently Boring" decoding="async" loading="lazy" sizes="(max-width: 768px) 100vw, 350px" src="https://img.youtube.com/vi/hfoB1pqkUWc/maxresdefault.jpg"/>
+<div class="play-button">▶</div>
+</div>
+<div class="video-info">
+<div class="brand-name">NEWGEN</div>
+<h3 class="video-title">Patently Boring Film</h3>
+<p class="video-description">Creative corporate storytelling with a unique twist on business communication.</p>
+<span class="video-category tvc">TVC</span>
+</div>
+</div>
+<div class="video-card" onclick="openVideo('https://youtu.be/XGUIYDcj578')">
+<div class="video-thumbnail">
+<img alt="Manforce Realgasm Condoms" decoding="async" loading="lazy" sizes="(max-width: 768px) 100vw, 350px" src="https://img.youtube.com/vi/XGUIYDcj578/maxresdefault.jpg"/>
+<div class="play-button">▶</div>
+</div>
+<div class="video-info">
+<div class="brand-name">MANFORCE</div>
+<h3 class="video-title">Realgasm Condoms - Color Changing</h3>
+<p class="video-description">Bold and innovative product launch campaign with creative visual effects.</p>
+<span class="video-category tvc">TVC</span>
+</div>
+</div>
+<div class="video-card" onclick="openVideo('https://youtu.be/Iif1iIc4gz4')">
+<div class="video-thumbnail">
+<img alt="Dabur Amla Women's Day" decoding="async" loading="lazy" sizes="(max-width: 768px) 100vw, 350px" src="https://img.youtube.com/vi/Iif1iIc4gz4/maxresdefault.jpg"/>
+<div class="play-button">▶</div>
+</div>
+<div class="video-info">
+<div class="brand-name">DABUR AMLA</div>
+<h3 class="video-title">Women's Day Film</h3>
+<p class="video-description">Heartwarming tribute to women's beauty and strength through natural care.</p>
+<span class="video-category tvc">TVC</span>
+</div>
+</div>
+<div class="video-card" onclick="openVideo('https://youtu.be/D3dPYTcHgVs')">
+<div class="video-thumbnail">
+<img alt="Mankind Pharma Sardar" decoding="async" loading="lazy" sizes="(max-width: 768px) 100vw, 350px" src="https://img.youtube.com/vi/D3dPYTcHgVs/maxresdefault.jpg"/>
+<div class="play-button">▶</div>
+</div>
+<div class="video-info">
+<div class="brand-name">MANKIND PHARMA</div>
+<h3 class="video-title">Sardar - SantSeKomal Ft. Ashutosh Rana</h3>
+<p class="video-description">Powerful pharmaceutical campaign featuring renowned actor Ashutosh Rana.</p>
+<span class="video-category tvc">TVC</span>
+</div>
+</div>
+<div class="video-card" onclick="openVideo('https://youtu.be/8_Atw7vzYfM')">
+<div class="video-thumbnail">
+<img alt="Prega News Mother's Day" decoding="async" loading="lazy" sizes="(max-width: 768px) 100vw, 350px" src="https://img.youtube.com/vi/8_Atw7vzYfM/maxresdefault.jpg"/>
+<div class="play-button">▶</div>
+</div>
+<div class="video-info">
+<div class="brand-name">PREGA NEWS</div>
+<h3 class="video-title">Mother's Day 2024</h3>
+<p class="video-description">Emotional celebration of motherhood and new beginnings.</p>
+<span class="video-category tvc">TVC</span>
+</div>
+</div>
+<div class="video-card" onclick="openVideo('https://youtu.be/ouCqLjxk0NA')">
+<div class="video-thumbnail">
+<img alt="International Nurse Day" decoding="async" loading="lazy" sizes="(max-width: 768px) 100vw, 350px" src="https://img.youtube.com/vi/ouCqLjxk0NA/maxresdefault.jpg"/>
+<div class="play-button">▶</div>
+</div>
+<div class="video-info">
+<div class="brand-name">HEALTHCARE</div>
+<h3 class="video-title">International Nurse Day Ft. Pratima Kannan</h3>
+<p class="video-description">Tribute to healthcare heroes featuring compelling personal stories.</p>
+<span class="video-category tvc">TVC</span>
+</div>
+</div>
+</div>
+<!-- Corporate Section -->
+<h3 class="category-title">🏢 Corporate Films</h3>
+<div class="video-grid">
+<div class="video-card" onclick="openVideo('https://youtu.be/Csd324R7wGw')">
+<div class="video-thumbnail">
+<img alt="DS Group Font Launch" decoding="async" loading="lazy" sizes="(max-width: 768px) 100vw, 350px" src="https://raw.githubusercontent.com/raghavjhamb-svg/raghavjhamb/main/images/thumbnails/corporate/DS%20Group%20Thumbnail.jpeg"/>
+<div class="play-button">▶</div>
+</div>
+<div class="video-info">
+<div class="brand-name">DS GROUP</div>
+<h3 class="video-title">A Timeless Tribute: DS Creates Font</h3>
+<p class="video-description">Premium corporate film showcasing brand heritage and typography innovation.</p>
+<span class="video-category corporate">Corporate</span>
+</div>
+</div>
+</div>
+<!-- Social Media Reels Section -->
+<h3 class="category-title">📱 Social Media Reels</h3>
+<div class="video-grid">
+<div class="video-card" onclick="openVideo('https://youtube.com/shorts/vjW3cBuOZUk')">
+<div class="video-thumbnail vertical">
+<img alt="Manforce Voting Virgin" decoding="async" loading="lazy" sizes="(max-width: 768px) 100vw, 350px" src="https://img.youtube.com/vi/vjW3cBuOZUk/maxresdefault.jpg"/>
+<div class="play-button">▶</div>
+</div>
+<div class="video-info">
+<div class="brand-name">MANFORCE</div>
+<h3 class="video-title">Abki Baar VotingVirgin Mat Bano Yaar</h3>
+<p class="video-description">Bold social awareness campaign with humor and impact.</p>
+<span class="video-category reels">Reel</span>
+</div>
+</div>
+<div class="video-card" onclick="openVideo('https://www.instagram.com/p/DLotdmRh7kx/')">
+<div class="video-thumbnail vertical"><img alt="Centrum CULT Thumbnail" decoding="async" loading="lazy" sizes="(max-width: 768px) 100vw, 350px" src="https://raw.githubusercontent.com/raghavjhamb-svg/raghavjhamb/main/images/thumbnails/reels/Centrum%20CULT%20Thumbnail.jpeg"/>
+<div class="play-button">▶</div>
+</div>
+<div class="video-info">
+<div class="brand-name">CENTRUM</div>
+<h3 class="video-title">Cult X Centrum Recharge</h3>
+<p class="video-description">Fitness and wellness collaboration content for social platforms.</p>
+<span class="video-category reels">Reel</span>
+</div>
+</div>
+<div class="video-card" onclick="openVideo('https://www.instagram.com/p/DJ9Fh7vMMtm/')">
+<div class="video-thumbnail vertical"><img alt="Centrum Football Thumbnail" decoding="async" loading="lazy" sizes="(max-width: 768px) 100vw, 350px" src="https://raw.githubusercontent.com/raghavjhamb-svg/raghavjhamb/main/images/thumbnails/reels/Centrum%20Football%20Thumbnail.jpeg"/>
+<div class="play-button">▶</div>
+</div>
+<div class="video-info">
+<div class="brand-name">CENTRUM</div>
+<h3 class="video-title">Recharge Women's Football League</h3>
+<p class="video-description">Sports-focused content celebrating women's achievements in football.</p>
+<span class="video-category reels">Reel</span>
+</div>
+</div>
+<div class="video-card" onclick="openVideo('https://www.instagram.com/reel/DMISx2ssmt8/')">
+<div class="video-thumbnail vertical"><img alt="UPI transaction history, downloadable in PDF or Excel" decoding="async" loading="lazy" sizes="(max-width: 768px) 100vw, 350px" src="https://raw.githubusercontent.com/raghavjhamb-svg/raghavjhamb/main/images/thumbnails/reels/UPI%20transaction%20history%2C%20downloadable%20in%20PDF%20or%20Excel%20Thumbnail.jpeg"/>
+<div class="play-button">▶</div>
+</div>
+<div class="video-info">
+<div class="brand-name">PAYTM</div>
+<h3 class="video-title">UPI transaction history, downloadable in PDF or Excel.</h3>
+<p class="video-description">Financial tracking made easy by downloading your UPI Statement.</p>
+<span class="video-category reels">Reel</span>
+</div>
+</div>
+<div class="video-card" onclick="openVideo('https://www.instagram.com/reel/DGAmL-toajh/')">
+<div class="video-thumbnail vertical"><img alt="Skyy Vodka Indian Sneaker Festival" decoding="async" loading="lazy" sizes="(max-width: 768px) 100vw, 350px" src="https://raw.githubusercontent.com/raghavjhamb-svg/raghavjhamb/main/images/thumbnails/reels/Skyy%20Vodka%20Indian%20Sneaker%20festival%20thumbnail.jpeg"/>
+<div class="play-button">▶</div>
+</div>
+<div class="video-info">
+<div class="brand-name">SKYY VODKA</div>
+<h3 class="video-title">Indian Sneaker Festival 2025</h3>
+<p class="video-description">Premium lifestyle content from India's biggest sneaker festival.</p>
+<span class="video-category reels">Reel</span>
+</div>
+</div>
+<div class="video-card" onclick="openVideo('https://www.instagram.com/reel/DF-T2YhzsYV/')">
+<div class="video-thumbnail vertical"><img alt="Skyy Vodka Indian Sneaker Festival Part 2" decoding="async" loading="lazy" sizes="(max-width: 768px) 100vw, 350px" src="https://raw.githubusercontent.com/raghavjhamb-svg/raghavjhamb/main/images/thumbnails/reels/Skyy%20Vodka%20Indian%20Sneaker%20festival%20%20part%202%20thumbnail.jpeg"/>
+<div class="play-button">▶</div>
+</div>
+<div class="video-info">
+<div class="brand-name">SKYY VODKA</div>
+<h3 class="video-title">Indian Sneaker Festival 2025 - Part 2</h3>
+<p class="video-description">Continuation of premium event coverage with lifestyle focus.</p>
+<span class="video-category reels">Reel</span>
+</div>
+</div>
+<div class="video-card" onclick="openVideo('https://www.instagram.com/reel/DLpRchqPuNU/')">
+<div class="video-thumbnail vertical"><img alt="Bijli ka Bill Hai ya Horror Thrill" decoding="async" loading="lazy" sizes="(max-width: 768px) 100vw, 350px" src="https://raw.githubusercontent.com/raghavjhamb-svg/raghavjhamb/main/images/thumbnails/reels/Bijli%20ka%20bill%20hai%20thumbnail%20.jpeg"/>
+<div class="play-button">▶</div>
+</div>
+<div class="video-info">
+<div class="brand-name">PAYTM</div>
+<h3 class="video-title">Bijli ka Bill Hai ya Horror Thrill</h3>
+<p class="video-description">Creative take on utility bill payments with horror-comedy twist.</p>
+<span class="video-category reels">Reel</span>
+</div>
+</div>
+<div class="video-card" onclick="openVideo('https://www.instagram.com/reel/DLRkfOBpIlh/')">
+<div class="video-thumbnail vertical"><img alt="Check Your Total Balance on Paytm" decoding="async" loading="lazy" sizes="(max-width: 768px) 100vw, 350px" src="https://raw.githubusercontent.com/raghavjhamb-svg/raghavjhamb/main/images/thumbnails/reels/Check%20you%20total%20balance%20on%20Paytm%20Thumbnail%20.jpeg"/>
+<div class="play-button">▶</div>
+</div>
+<div class="video-info">
+<div class="brand-name">PAYTM</div>
+<h3 class="video-title">Check Your Total Balance on Paytm</h3>
+<p class="video-description">Informative content about digital wallet features and benefits.</p>
+<span class="video-category reels">Reel</span>
+</div>
+</div>
+<div class="video-card" onclick="openVideo('https://www.instagram.com/reel/DLCjx2hirV3/')">
+<div class="video-thumbnail vertical"><img alt="People in Their Mid 20s" decoding="async" loading="lazy" sizes="(max-width: 768px) 100vw, 350px" src="https://raw.githubusercontent.com/raghavjhamb-svg/raghavjhamb/main/images/thumbnails/reels/People%20in%20thier%20mid%2020s%20thumbnail.jpeg"/>
+<div class="play-button">▶</div>
+</div>
+<div class="video-info">
+<div class="brand-name">PAYTM</div>
+<h3 class="video-title">People in Their Mid 20s</h3>
+<p class="video-description">Relatable millennial content about financial habits and lifestyle.</p>
+<span class="video-category reels">Reel</span>
+</div>
+</div>
+<div class="video-card" onclick="openVideo('https://www.instagram.com/reel/DJ6RcYZMx6T/')">
+<div class="video-thumbnail vertical"><img alt="Trends ke Peeche" decoding="async" loading="lazy" sizes="(max-width: 768px) 100vw, 350px" src="https://raw.githubusercontent.com/raghavjhamb-svg/raghavjhamb/main/images/thumbnails/reels/Trends%20ke%20peeche%20Thumbnail%20.jpeg"/>
+<div class="play-button">▶</div>
+</div>
+<div class="video-info">
+<div class="brand-name">PAYTM</div>
+<h3 class="video-title">Trends ke Peche</h3>
+<p class="video-description">Trendy social media content connecting with youth culture.</p>
+<span class="video-category reels">Reel</span>
+</div>
+</div>
+<div class="video-card" onclick="openVideo('https://www.instagram.com/reel/DGu0OCpsv2n/')">
+<div class="video-thumbnail vertical"><img alt="Kharche Peeche Pade Hain" decoding="async" loading="lazy" sizes="(max-width: 768px) 100vw, 350px" src="https://raw.githubusercontent.com/raghavjhamb-svg/raghavjhamb/main/images/thumbnails/reels/Kharche%20Peeche%20Pade%20hain%20Thumbnail.jpeg"/>
+<div class="play-button">▶</div>
+</div>
+<div class="video-info">
+<div class="brand-name">PAYTM</div>
+<h3 class="video-title">Kharche Peeche Pade Hai?</h3>
+<p class="video-description">Humorous take on managing expenses and financial planning.</p>
+<span class="video-category reels">Reel</span>
+</div>
+</div>
+<div class="video-card" onclick="openVideo('https://www.instagram.com/reel/C_sUJJetJzt/')">
+<div class="video-thumbnail vertical"><img alt="OG's Pizza thrives with our Made-in-India Paytm Soundbox" decoding="async" loading="lazy" sizes="(max-width: 768px) 100vw, 350px" src="https://raw.githubusercontent.com/raghavjhamb-svg/raghavjhamb/main/images/thumbnails/reels/OG%27s%20Pizza%20thrives%20with%20our%20Made-in-India%20Paytm%20Soundbox%20thumbnail.jpeg"/>
+<div class="play-button">▶</div>
+</div>
+<div class="video-info">
+<div class="brand-name">PAYTM</div>
+<h3 class="video-title">OG's Pizza thrives with our Made-in-India Paytm Soundbox</h3>
+<p class="video-description">Business transformation stories featuring Paytm's Soundbox technology.</p>
+<span class="video-category reels">Reel</span>
+</div>
+</div>
+</div>
+<!-- Documentary Section -->
+<h3 class="category-title">🎬 Documentary</h3>
+<div class="video-grid">
+<div class="video-card" onclick="openVideo('https://youtu.be/0Pz2vL6tVrk')">
+<div class="video-thumbnail">
+<img alt="Kachha Baniyan Gang Documentary" decoding="async" loading="lazy" sizes="(max-width: 768px) 100vw, 350px" src="https://img.youtube.com/vi/0Pz2vL6tVrk/maxresdefault.jpg"/>
+<div class="play-button">▶</div>
+</div>
+<div class="video-info">
+<div class="brand-name">NETFLIX INDIA</div>
+<h3 class="video-title">Kachha Baniyan Gang: The Real Story</h3>
+<p class="video-description">Behind Delhi Crime Season 2 - In-depth documentary exploring real criminal cases.</p>
+<span class="video-category documentary">Documentary</span>
+</div>
+</div>
+</div>
+<!-- Fashion Section -->
+<h3 class="category-title">👗 Fashion Content</h3>
+<div class="video-grid">
+<div class="video-card" onclick="openVideo('https://www.instagram.com/p/DNXo_fmokgj/')">
+<div class="video-thumbnail vertical"><img alt="Florals in Full Power Mode" decoding="async" loading="lazy" sizes="(max-width: 768px) 100vw, 350px" src="https://raw.githubusercontent.com/raghavjhamb-svg/raghavjhamb/main/images/thumbnails/reels/Florals%20in%20Full%20Power%20Mode.jpeg"/>
+<div class="play-button">▶</div>
+</div>
+<div class="video-info">
+<div class="brand-name">VOLCAPE</div>
+<h3 class="video-title">Florals in Full Power Mode</h3>
+<p class="video-description">High-fashion content showcasing floral patterns and contemporary style.</p>
+<span class="video-category fashion">Fashion</span>
+</div>
+</div>
+<div class="video-card" onclick="openVideo('https://www.instagram.com/p/DNDxEhuI7oU/')">
+<div class="video-thumbnail vertical"><img alt="PRINTS, But Make It Versatile" decoding="async" loading="lazy" sizes="(max-width: 768px) 100vw, 350px" src="https://raw.githubusercontent.com/raghavjhamb-svg/raghavjhamb/main/images/thumbnails/reels/PRINTS%2CBut%20make%20it%20versatile%20.jpeg"/>
+<div class="play-button">▶</div>
+</div>
+<div class="video-info">
+<div class="brand-name">VOLCAPE</div>
+<h3 class="video-title">PRINTS, But Make It Versatile</h3>
+<p class="video-description">Versatile fashion styling with bold prints and modern aesthetics.</p>
+<span class="video-category fashion">Fashion</span>
+</div>
+</div>
+</div>
+<!-- Design Series Section -->
+<h3 class="category-title">🗣️ Design Series</h3>
+<div class="video-grid">
+<div class="video-card" onclick="openVideo('https://youtu.be/uB_IizoZx-w')">
+<div class="video-thumbnail">
+<img alt="RMZ x Architectural Digest" decoding="async" loading="lazy" sizes="(max-width: 768px) 100vw, 350px" src="https://img.youtube.com/vi/uB_IizoZx-w/maxresdefault.jpg"/>
+<div class="play-button">▶</div>
+</div>
+<div class="video-info">
+<div class="brand-name">RMZ x ARCHITECTURAL DIGEST</div>
+<h3 class="video-title">Behind The Design - Main Film</h3>
+<p class="video-description">Premium architectural series showcasing design excellence and innovation.</p>
+<span class="video-category series">Series</span>
+</div>
+</div>
+<div class="video-card" onclick="openVideo('https://youtu.be/Zvpy9AQ-KTA')">
+<div class="video-thumbnail">
+<img alt="GROHE Bath Design Awards Winner 1" decoding="async" loading="lazy" sizes="(max-width: 768px) 100vw, 350px" src="https://img.youtube.com/vi/Zvpy9AQ-KTA/maxresdefault.jpg"/>
+<div class="play-button">▶</div>
+</div>
+<div class="video-info">
+<div class="brand-name">GROHE BATH &amp; DESIGN AWARDS</div>
+<h3 class="video-title">Ayesha &amp; Nina Puri - Winner 2023</h3>
+<p class="video-description">Award ceremony coverage featuring winning bathroom designs and architects.</p>
+<span class="video-category series">Series</span>
+</div>
+</div>
+<div class="video-card" onclick="openVideo('https://youtu.be/QvAiADI2ix8')">
+<div class="video-thumbnail">
+<img alt="GROHE Bath Design Awards Winner 2" decoding="async" loading="lazy" sizes="(max-width: 768px) 100vw, 350px" src="https://img.youtube.com/vi/QvAiADI2ix8/maxresdefault.jpg"/>
+<div class="play-button">▶</div>
+</div>
+<div class="video-info">
+<div class="brand-name">GROHE BATH &amp; DESIGN AWARDS</div>
+<h3 class="video-title">Preksha &amp; Simran - Winner 2023</h3>
+<p class="video-description">Designer spotlight showcasing innovative bathroom design concepts.</p>
+<span class="video-category series">Series</span>
+</div>
+</div>
+<div class="video-card" onclick="openVideo('https://youtu.be/FopnLqctqLA')">
+<div class="video-thumbnail">
+<img alt="GROHE Bath Design Awards Winner 3" decoding="async" loading="lazy" sizes="(max-width: 768px) 100vw, 350px" src="https://img.youtube.com/vi/FopnLqctqLA/maxresdefault.jpg"/>
+<div class="play-button">▶</div>
+</div>
+<div class="video-info">
+<div class="brand-name">GROHE BATH &amp; DESIGN AWARDS</div>
+<h3 class="video-title">Shalini Chandrashekar - Winner 2023</h3>
+<p class="video-description">Individual designer profile highlighting creative excellence in bathroom design.</p>
+<span class="video-category series">Series</span>
+</div>
+</div>
+<div class="video-card" onclick="openVideo('https://youtu.be/zU8hXdrC86c')">
+<div class="video-thumbnail">
+<img alt="GROHE Bath Design Awards Winner 4" decoding="async" loading="lazy" sizes="(max-width: 768px) 100vw, 350px" src="https://img.youtube.com/vi/zU8hXdrC86c/maxresdefault.jpg"/>
+<div class="play-button">▶</div>
+</div>
+<div class="video-info">
+<div class="brand-name">GROHE BATH &amp; DESIGN AWARDS</div>
+<h3 class="video-title">Prashant &amp; Supriya Nathe - Winners 2023</h3>
+<p class="video-description">Design duo showcase featuring collaborative bathroom design excellence.</p>
+<span class="video-category series">Series</span>
+</div>
+</div>
+</div>
+<!-- GQ Best Dressed Section -->
+<h3 class="category-title">🏆 GQ Best Dressed</h3>
+<div class="video-grid">
+<div class="video-card" onclick="openVideo('https://youtu.be/04dE6zKOedA')">
+<div class="video-thumbnail">
+<img alt="GQ Best Dressed x The Collective" decoding="async" loading="lazy" sizes="(max-width: 768px) 100vw, 350px" src="https://img.youtube.com/vi/04dE6zKOedA/maxresdefault.jpg"/>
+<div class="play-button">▶</div>
+</div>
+<div class="video-info">
+<div class="brand-name">GQ INDIA</div>
+<h3 class="video-title">Best Dressed x The Collective</h3>
+<p class="video-description">Premium fashion event coverage showcasing India's best-dressed personalities.</p>
+<span class="video-category event">Event</span>
+</div>
+</div>
+<div class="video-card" onclick="openVideo('https://youtu.be/Klu2u-Rf2Ls')">
+<div class="video-thumbnail">
+<img alt="GQ Best Dressed x Vedica" decoding="async" loading="lazy" sizes="(max-width: 768px) 100vw, 350px" src="https://img.youtube.com/vi/Klu2u-Rf2Ls/maxresdefault.jpg"/>
+<div class="play-button">▶</div>
+</div>
+<div class="video-info">
+<div class="brand-name">GQ BEST DRESSED 2022</div>
+<h3 class="video-title">GQ Best Dressed x Vedica</h3>
+<p class="video-description">Luxury fashion event documentation featuring high-end styling and elegance.</p>
+<span class="video-category event">Event</span>
+</div>
+</div>
+<div class="video-card" onclick="openVideo('https://youtu.be/5LQ_q-hcLek')">
+<div class="video-thumbnail">
+<img alt="GQ Best Dressed x The Collective 2022" decoding="async" loading="lazy" sizes="(max-width: 768px) 100vw, 350px" src="https://img.youtube.com/vi/5LQ_q-hcLek/maxresdefault.jpg"/>
+<div class="play-button">▶</div>
+</div>
+<div class="video-info">
+<div class="brand-name">GQ BEST DRESSED 2022</div>
+<h3 class="video-title">GQ Best Dressed x The Collective</h3>
+<p class="video-description">Fashion week coverage highlighting contemporary style and design trends.</p>
+<span class="video-category event">Event</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section class="section" id="about">
+<div class="container">
+<h2 class="section-title">About Me</h2>
+<div class="about-content">
+<div class="about-text">
+<p>I'm Raghav Jhamb, a passionate video producer with over 4+ years of experience creating compelling visual stories. My expertise spans across television commercials, corporate films, social media content, documentaries, and premium event coverage.</p>
+<p>I've had the privilege of working with major brands like Paytm, Prega News, Dabur, Mankind Pharma, Netflix India, GQ India, and many more, creating content that resonates with audiences and drives results.</p>
+<p>From pre-production planning to final delivery, I handle every aspect of the video production process with professionalism and creativity. Let's create something amazing together!</p>
+</div>
+<div class="about-image"><img alt="Raghav Jhamb Profile Photo" decoding="async" loading="lazy" sizes="(max-width: 768px) 100vw, 600px" src="https://raw.githubusercontent.com/raghavjhamb-svg/raghavjhamb/main/images/profile/Profile%20photo.jpeg"/></div>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section class="section" id="services">
+<div class="container">
+<h2 class="section-title">My Services</h2>
+<div class="services-grid">
+<div class="service-card">
+<div class="service-icon">📺</div>
+<h3>Television Commercials</h3>
+<p>High-impact TVCs for major brands including Prega News, Dabur Amla, Manforce, and Mankind Pharma.</p>
+</div>
+<div class="service-card">
+<div class="service-icon">📱</div>
+<h3>Social Media Content</h3>
+<p>Engaging vertical content for brands like Paytm, Centrum, and Skyy Vodka across social platforms.</p>
+</div>
+<div class="service-card">
+<div class="service-icon">🎬</div>
+<h3>Documentary &amp; Corporate</h3>
+<p>Professional documentary filmmaking and corporate content for Netflix, DS Group, and premium brands.</p>
+</div>
+<div class="service-card">
+<div class="service-icon">🏆</div>
+<h3>Premium Events</h3>
+<p>High-end event coverage for GQ Best Dressed, GROHE Awards, and luxury fashion shows.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="section" id="contact">
+<div class="container">
+<h2 class="section-title">Let's Work Together</h2>
+<form class="contact-form" onsubmit="handleSubmit(event)">
+<div class="form-group">
+<label for="name">Name</label>
+<input id="name" name="name" required="" type="text"/>
+</div>
+<div class="form-group">
+<label for="email">Email</label>
+<input id="email" name="email" required="" type="email"/>
+</div>
+<div class="form-group">
+<label for="project">Project Type</label>
+<input id="project" name="project" placeholder="e.g., TVC, Social Media Reels, Documentary, Corporate Film" type="text"/>
+</div>
+<div class="form-group">
+<label for="message">Project Details</label>
+<textarea id="message" name="message" required="" rows="5"></textarea>
+</div>
+<button class="submit-button" type="submit">Send Message</button>
+</form>
+</div>
+</section>
+<!-- Footer -->
+<footer>
+<div class="container">
+<div class="social-links">
+<a class="social-link" href="mailto:raghavjhamb712@gmail.com" title="Email">
+<svg viewbox="0 0 24 24">
+<path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.89 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path>
+</svg>
+</a>
+<a class="social-link" href="https://www.instagram.com/raghavjhamb07/" target="_blank" title="Instagram">
+<svg viewbox="0 0 24 24">
+<path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3z"></path>
+</svg>
+</a>
+<a class="social-link" href="https://www.linkedin.com/in/raghavjhambb/" target="_blank" title="LinkedIn">
+<svg viewbox="0 0 24 24">
+<path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"></path>
+</svg>
+</a>
+<a class="social-link" href="https://youtube.com/playlist?list=PLqAauPZ7qN-7JSnWL7FgnNjIi0YGft2dS&amp;si=TNr0xqjOSz_XoQYD" target="_blank" title="YouTube Portfolio">
+<svg viewbox="0 0 24 24">
+<path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9c.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83c-.25.9-.83 1.48-1.73 1.73c-.47.13-1.33.22-2.65.28c-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44c-.9-.25-1.48-.83-1.73-1.73c-.13-.47-.22-1.1-.28-1.9c-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83c.25-.9.83-1.48 1.73-1.73c.47-.13 1.33-.22 2.65-.28c1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44c.9.25 1.48.83 1.73 1.73z"></path>
+</svg>
+</a>
+</div>
+<p>© 2025 Raghav Jhamb. All rights reserved. | Crafted with passion for visual storytelling</p>
+</div>
+</footer>
+<div aria-hidden="true" class="modal" id="videoModal"><div class="modal-backdrop"></div><div aria-label="Video player" aria-modal="true" class="modal-dialog" role="dialog"><button aria-label="Close" class="modal-close" type="button">✕</button><iframe allowfullscreen="True" id="videoFrame" title="Video"></iframe></div></div><script>
+        // Video opening functionality
+        function openVideo(url) {
+            window.open(url, '_blank');
+        }
+
+        // Contact form handler
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData);
+            
+            // Simple validation
+            if (!data.name || !data.email || !data.message) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // Show success message
+            alert('Thank you for your message! I\'ll get back to you within 24 hours.');
+            
+            // Reset form
+            event.target.reset();
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerOffset = 80;
+                    const elementPosition = target.offsetTop;
+                    const offsetPosition = elementPosition - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Header scroll effect
+        const header = document.getElementById('header');
+        let lastScrollTop = 0;
+
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            // Add scrolled class for styling
+            if (scrollTop > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+            
+            lastScrollTop = scrollTop;
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Enhanced video card interactions
+        document.querySelectorAll('.video-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Initialize animations when page loads
+        window.addEventListener('load', function() {
+            document.body.classList.add('loaded');
+        });
+
+        // Add loading animation
+        const style = document.createElement('style');
+        style.textContent = `
+            body {
+                opacity: 0;
+                transition: opacity 0.5s ease-in-out;
+            }
+            body.loaded {
+                opacity: 1;
+            }
+        `;
+        document.head.appendChild(style);
+    
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navEl = document.querySelector('header nav');
+        const navLinks = document.querySelectorAll('.nav-links a');
+        if (menuToggle && navEl) {
+            menuToggle.addEventListener('click', () => {
+                const isOpen = navEl.classList.toggle('open');
+                menuToggle.setAttribute('aria-expanded', String(isOpen));
+            });
+            // Close menu when a link is clicked (mobile)
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (navEl.classList.contains('open')) {
+                        navEl.classList.remove('open');
+                        menuToggle.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            });
+            // Close on outside click
+            document.addEventListener('click', (e) => {
+                if (navEl.classList.contains('open') && !navEl.contains(e.target)) {
+                    navEl.classList.remove('open');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+        }
+    
+        
+        // --- Video Modal Lightbox ---
+        function openVideo(url) {
+            const ytMatch = url.match(/(?:youtu\.be\/|v=)([A-Za-z0-9_-]+)/);
+            if (ytMatch && ytMatch[1]) {
+                const m = document.getElementById('videoModal');
+                const f = document.getElementById('videoFrame');
+                f.src = `https://www.youtube.com/embed/${ytMatch[1]}?autoplay=1`;
+                m.classList.add('open'); m.setAttribute('aria-hidden','false');
+            } else {
+                // Fallback for non-embeddable links (e.g., Instagram)
+                window.open(url, '_blank');
+            }
+        }
+        const modalClose = document.querySelector('.modal-close');
+        const modalBackdrop = document.querySelector('.modal-backdrop');
+        function closeModal(){
+            const m = document.getElementById('videoModal');
+            const f = document.getElementById('videoFrame');
+            m.classList.remove('open'); m.setAttribute('aria-hidden','true'); f.src='';
+        }
+        modalClose && modalClose.addEventListener('click', closeModal);
+        modalBackdrop && modalBackdrop.addEventListener('click', closeModal);
+
+        // --- Portfolio Filters (hide empty sections + autoscroll) ---
+        document.querySelectorAll('.filters button').forEach(btn => {
+          btn.addEventListener('click', () => {
+            document.querySelector('.filters .active')?.classList.remove('active');
+            btn.classList.add('active');
+            const tag = btn.dataset.filter;
+
+            // Show/hide cards
+            document.querySelectorAll('.video-card').forEach(card => {
+              const badge = card.querySelector('.video-category');
+              const cats = ['tvc','corporate','reels','fashion','series','event'];
+              const cat = badge ? [...badge.classList].find(c => cats.includes(c)) : '';
+              card.hidden = (tag!=='all' && cat!==tag);
+            });
+
+            // Hide section titles if their grid has no visible cards
+            document.querySelectorAll('.category-title').forEach(title => {
+              const grid = title.nextElementSibling; // the .video-grid after the title
+              const visible = grid ? [...grid.querySelectorAll('.video-card')].some(c => !c.hidden) : false;
+              title.style.display = (tag==='all' || visible) ? '' : 'none';
+              // Also hide the grid if empty to remove spacing
+              if (grid) grid.style.display = (tag==='all' || visible) ? '' : 'none';
+            });
+
+            // Auto-scroll
+            if (tag !== 'all') {
+              const firstVisible = document.querySelector('.category-title:not([style*="display: none"])');
+              if (firstVisible) {
+                const headerOffset = 80;
+                const top = firstVisible.getBoundingClientRect().top + window.scrollY - headerOffset;
+                window.scrollTo({ top, behavior: 'smooth' });
+              }
+            } else {
+              const portfolio = document.getElementById('portfolio');
+              const headerOffset = 80;
+              const top = portfolio.getBoundingClientRect().top + window.scrollY - headerOffset;
+              window.scrollTo({ top, behavior: 'smooth' });
+            }
+          });
+        });
+    </script>
+</body>
+</html>
