@@ -97,9 +97,10 @@
     /* Hero */
     .hero { position: relative; min-height: 100svh; display: flex; align-items: flex-end; overflow: hidden; }
     .hero video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-    .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,10,11,.35) 0%, rgba(10,10,11,.25) 40%, rgba(10,10,11,.92) 100%); }
+    .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,10,11,.45) 0%, rgba(10,10,11,.55) 45%, rgba(10,10,11,.95) 100%); }
     .hero-inner { position: relative; z-index: 1; padding: 8rem 0 4rem; display: grid; gap: 1.5rem; }
-    .hero h1 { max-width: 14ch; }
+    .hero h1 { max-width: 14ch; text-shadow: 0 2px 24px rgba(0,0,0,.5); }
+    .hero .lede { color: var(--text); text-shadow: 0 1px 14px rgba(0,0,0,.7); }
     .hero-cta { display: flex; flex-wrap: wrap; gap: .9rem; margin-top: .5rem; }
     .hero-foot { position: relative; z-index: 1; }
 
