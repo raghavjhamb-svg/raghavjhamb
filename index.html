@@ -124,6 +124,7 @@
     .group { margin-top: clamp(2.5rem, 5vw, 4rem); }
     .group[hidden] { display: none; }
     .group h3 { display: flex; align-items: baseline; gap: .75rem; margin-bottom: 1.25rem; font-size: 1.05rem; font-weight: 600; letter-spacing: .02em; }
+    .group-note { color: var(--muted); max-width: 64ch; margin: -0.5rem 0 1.25rem; }
     .group h3 small { color: var(--muted); font-weight: 500; font-size: .85rem; }
     .grid { display: grid; gap: 1.25rem; }
     .grid-wide { grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); }
@@ -253,7 +254,7 @@
         <div class="hero-foot stats" aria-label="Highlights">
           <div class="stat"><strong>6+</strong><span>years producing</span></div>
           <div class="stat"><strong>15+</strong><span>brands</span></div>
-          <div class="stat"><strong>7</strong><span>formats, TVC to reel</span></div>
+          <div class="stat"><strong>8</strong><span>formats, TVC to creator</span></div>
         </div>
       </div>
     </section>
@@ -269,11 +270,12 @@
       <div class="wrap">
         <div class="section-head reveal">
           <p class="eyebrow">Selected work</p>
-          <h2>Work across <em>seven</em> formats.</h2>
+          <h2>Work across <em>eight</em> formats.</h2>
           <div class="filters" role="group" aria-label="Filter work by format">
             <button class="chip" type="button" data-filter="all" aria-pressed="true">All</button>
             <button class="chip" type="button" data-filter="tvc" aria-pressed="false">TVC</button>
             <button class="chip" type="button" data-filter="reels" aria-pressed="false">Reels</button>
+            <button class="chip" type="button" data-filter="influencer" aria-pressed="false">Influencer marketing</button>
             <button class="chip" type="button" data-filter="documentary" aria-pressed="false">Documentary</button>
             <button class="chip" type="button" data-filter="corporate" aria-pressed="false">Corporate</button>
             <button class="chip" type="button" data-filter="fashion" aria-pressed="false">Fashion</button>
@@ -296,8 +298,9 @@
         </div>
 
         <div class="group reveal" data-group="reels">
-          <h3>Social reels <small>12 films</small></h3>
+          <h3>Social reels <small>13 films</small></h3>
           <div class="grid grid-tall">
+            <button class="card" type="button" data-cat="reels" data-video="https://youtube.com/shorts/bFcx8r1PUZo"><span class="card-media"><img src="https://i.ytimg.com/vi/bFcx8r1PUZo/maxresdefault.jpg" alt="" width="720" height="1280" loading="lazy" decoding="async" /><span class="play"><span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l13-7.5z"/></svg></span></span></span><span class="card-meta"><span class="brand">Revital</span><span class="title">Revital Pickleball Event</span></span></button>
             <button class="card" type="button" data-cat="reels" data-video="https://youtube.com/shorts/vjW3cBuOZUk"><span class="card-media"><img src="https://i.ytimg.com/vi/vjW3cBuOZUk/maxresdefault.jpg" alt="" width="720" height="1280" loading="lazy" decoding="async" /><span class="play"><span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l13-7.5z"/></svg></span></span></span><span class="card-meta"><span class="brand">Manforce</span><span class="title">Abki Baar VotingVirgin Mat Bano Yaar</span></span></button>
             <button class="card" type="button" data-cat="reels" data-video="https://www.instagram.com/p/DLotdmRh7kx/"><span class="card-media"><img src="assets/work/centrum-cult.webp" alt="" width="720" height="1170" loading="lazy" decoding="async" /><span class="play"><span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l13-7.5z"/></svg></span></span></span><span class="card-meta"><span class="brand">Centrum</span><span class="title">Cult x Centrum Recharge</span></span></button>
             <button class="card" type="button" data-cat="reels" data-video="https://www.instagram.com/p/DJ9Fh7vMMtm/"><span class="card-media"><img src="assets/work/centrum-football.webp" alt="" width="720" height="1268" loading="lazy" decoding="async" /><span class="play"><span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l13-7.5z"/></svg></span></span></span><span class="card-meta"><span class="brand">Centrum</span><span class="title">Recharge Women's Football League</span></span></button>
@@ -310,6 +313,21 @@
             <button class="card" type="button" data-cat="reels" data-video="https://www.instagram.com/reel/DJ6RcYZMx6T/"><span class="card-media"><img src="assets/work/paytm-trends.webp" alt="" width="720" height="1269" loading="lazy" decoding="async" /><span class="play"><span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l13-7.5z"/></svg></span></span></span><span class="card-meta"><span class="brand">Paytm</span><span class="title">Trends ke Peeche</span></span></button>
             <button class="card" type="button" data-cat="reels" data-video="https://www.instagram.com/reel/DGu0OCpsv2n/"><span class="card-media"><img src="assets/work/paytm-kharche.webp" alt="" width="720" height="1281" loading="lazy" decoding="async" /><span class="play"><span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l13-7.5z"/></svg></span></span></span><span class="card-meta"><span class="brand">Paytm</span><span class="title">Kharche Peeche Pade Hai?</span></span></button>
             <button class="card wide" type="button" data-cat="reels" data-video="https://www.instagram.com/reel/C_sUJJetJzt/"><span class="card-media"><img src="assets/work/paytm-soundbox.webp" alt="" width="1280" height="605" loading="lazy" decoding="async" /><span class="play"><span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l13-7.5z"/></svg></span></span></span><span class="card-meta"><span class="brand">Paytm</span><span class="title">OG's Pizza thrives with the Made-in-India Paytm Soundbox</span></span></button>
+          </div>
+        </div>
+
+        <div class="group reveal" data-group="influencer">
+          <h3>Influencer marketing <small>8 collaborations</small></h3>
+          <p class="group-note">Creator-led campaigns for Urban Company, produced end to end: brief, script, shoot support and edit. Alongside well-known industry faces, this work has reached audiences through creators from South India and Tier 2 cities.</p>
+          <div class="grid grid-tall">
+            <button class="card" type="button" data-cat="influencer" data-video="https://www.instagram.com/p/Dds4a93Jc06/"><span class="card-media"><img src="assets/work/inf-battatawada.webp" alt="" width="720" height="1280" loading="lazy" decoding="async" /><span class="play"><span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l13-7.5z"/></svg></span></span></span><span class="card-meta"><span class="brand">Revamp by Urban Company</span><span class="title">@battatawada</span></span></button>
+            <button class="card" type="button" data-cat="influencer" data-video="https://www.instagram.com/p/DdTf9yesIS2/"><span class="card-media"><img src="assets/work/inf-sherryshroff.webp" alt="" width="720" height="1280" loading="lazy" decoding="async" /><span class="play"><span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l13-7.5z"/></svg></span></span></span><span class="card-meta"><span class="brand">Revamp by Urban Company</span><span class="title">Sherry Shroff</span></span></button>
+            <button class="card" type="button" data-cat="influencer" data-video="https://www.instagram.com/p/DU5oaAujId9/"><span class="card-media"><img src="assets/work/inf-debinabon.webp" alt="" width="720" height="1280" loading="lazy" decoding="async" /><span class="play"><span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l13-7.5z"/></svg></span></span></span><span class="card-meta"><span class="brand">Revamp by Urban Company</span><span class="title">Debina Bonnerjee</span></span></button>
+            <button class="card" type="button" data-cat="influencer" data-video="https://www.instagram.com/p/DcJEIM-PxGg/"><span class="card-media"><img src="assets/work/inf-archanapuransingh.webp" alt="" width="720" height="1280" loading="lazy" decoding="async" /><span class="play"><span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l13-7.5z"/></svg></span></span></span><span class="card-meta"><span class="brand">Urban Company</span><span class="title">Archana Puran Singh</span></span></button>
+            <button class="card" type="button" data-cat="influencer" data-video="https://www.instagram.com/p/DcL1rxXzoIQ/"><span class="card-media"><img src="assets/work/inf-mahlyf.webp" alt="" width="720" height="1280" loading="lazy" decoding="async" /><span class="play"><span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l13-7.5z"/></svg></span></span></span><span class="card-meta"><span class="brand">Urban Company</span><span class="title">@mahlyf_mahrulez</span></span></button>
+            <button class="card" type="button" data-cat="influencer" data-video="https://www.instagram.com/p/DcLCahcRr2Y/"><span class="card-media"><img src="assets/work/inf-vishnukaushal.webp" alt="" width="720" height="1280" loading="lazy" decoding="async" /><span class="play"><span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l13-7.5z"/></svg></span></span></span><span class="card-meta"><span class="brand">Urban Company</span><span class="title">Vishnu Kaushal</span></span></button>
+            <button class="card" type="button" data-cat="influencer" data-video="https://www.instagram.com/p/DcFoPTssxBE/"><span class="card-media"><img src="assets/work/inf-farahkhan.webp" alt="" width="720" height="1280" loading="lazy" decoding="async" /><span class="play"><span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l13-7.5z"/></svg></span></span></span><span class="card-meta"><span class="brand">Urban Company</span><span class="title">Farah Khan</span></span></button>
+            <button class="card" type="button" data-cat="influencer" data-video="https://www.instagram.com/p/DcJBgWARdfy/"><span class="card-media"><img src="assets/work/inf-salonayyy.webp" alt="" width="720" height="1280" loading="lazy" decoding="async" /><span class="play"><span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l13-7.5z"/></svg></span></span></span><span class="card-meta"><span class="brand">Urban Company</span><span class="title">@salonayyy</span></span></button>
           </div>
         </div>
 
